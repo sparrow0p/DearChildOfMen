@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dn0bt76pnng8r"]
+
+[ext_resource type="PackedScene" uid="uid://defyfpgwpby2v" path="res://scenes/sectors/base_sector.tscn" id="1_psdto"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_psdto"]
+viewport_path = NodePath("Sprite3D/SubViewport")
+
+[node name="Sector1x2" unique_id=1886618992 instance=ExtResource("1_psdto")]
+
+[node name="Sprite3D" parent="." index="1" unique_id=1494880813]
+texture = SubResource("ViewportTexture_psdto")
+
+[node name="Label" parent="Sprite3D/SubViewport" parent_id_path=PackedInt32Array(1115103514) index="0" unique_id=715298122]
+text = "12"
