@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://fc3ixg3bq1fu"]
+
+[ext_resource type="Texture2D" uid="uid://dmr4ghmbsud6b" path="res://meshes/environment/the_world_full_size_world_palette.png" id="1_4cax8"]
+
+[resource]
+albedo_texture = ExtResource("1_4cax8")
+texture_filter = 0

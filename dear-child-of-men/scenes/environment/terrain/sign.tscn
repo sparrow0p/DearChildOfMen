@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://ctsduskhvawpo"]
+
+[ext_resource type="PackedScene" uid="uid://nocl47flsmsb" path="res://meshes/decals/Sign.glb" id="1_w167c"]
+
+[node name="Sign" unique_id=2058336451 instance=ExtResource("1_w167c")]
+
+[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(1866455569) index="0" unique_id=822712610]
+bones/0/rotation = Quaternion(0.7071068, 0, -0.7071068, 0)
+
+[node name="AnimationPlayer" parent="." index="1" unique_id=1355121332]
+autoplay = &"Sway"

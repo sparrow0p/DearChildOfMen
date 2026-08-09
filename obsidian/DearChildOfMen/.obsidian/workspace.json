@@ -1,0 +1,208 @@
+{
+  "main": {
+    "id": "7e2d11e40f4cf2dd",
+    "type": "split",
+    "children": [
+      {
+        "id": "f1e5587a5f03a4bb",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f296c90cb546f5ba",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "Regions/World Map.canvas",
+                "viewState": {
+                  "x": 53.14538856843804,
+                  "y": -82.25336994371925,
+                  "zoom": -0.4444444274902344
+                }
+              },
+              "icon": "lucide-layout-dashboard",
+              "title": "World Map"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "538282b17d8eef6f",
+    "type": "split",
+    "children": [
+      {
+        "id": "7c71689bcd704505",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "07e602cb9c2cc47d",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "644d3172bbfc5d77",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "9c4b07457c850ba6",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "7127482434a9f574",
+    "type": "split",
+    "children": [
+      {
+        "id": "675020a3d707561a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "399cdef275386d18",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Regions/World Map.canvas",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "e2fc600c070f6dcd",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Regions/World Map.canvas",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "70542f9428a70564",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "098a159342d7c439",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "0d3a96b31d4f0372",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Regions/World Map.canvas",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "07e602cb9c2cc47d",
+  "lastOpenFiles": [
+    "Regions/Snow Line",
+    "Untitled.base",
+    "Regions/World Map.canvas",
+    "Regions/Shilded Plateau",
+    "Regions/Untitled.md",
+    "Enemies",
+    "Spells",
+    "Characters",
+    "Regions",
+    "create a link.md",
+    "Welcome.md"
+  ]
+}
