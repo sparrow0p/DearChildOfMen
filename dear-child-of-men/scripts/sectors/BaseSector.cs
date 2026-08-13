@@ -50,21 +50,21 @@ public partial class BaseSector : Node3D {
 
 
 	public int preload_sector() {
-		GD.Print($"{Name}, preload");
+		//GD.Print($"{Name}, preload");
 		ProcessMode = Node.ProcessModeEnum.Disabled;
 		return 0;
 	}
 
 
 	public int load_sector() {
-		GD.Print($"{Name}, load");
+		//GD.Print($"{Name}, load");
 		ProcessMode = Node.ProcessModeEnum.Inherit;
 		return 0;
 	}
 
 
 	public void unload_sector() {
-		GD.Print($"{Name}, unload");
+		//GD.Print($"{Name}, unload");
 		QueueFree();
 	}
 }

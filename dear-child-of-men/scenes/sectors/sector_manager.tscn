@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dc0di7n5f2tdg" path="res://scripts/sectors/SectorManager.cs" id="1_iurmr"]
 [ext_resource type="PackedScene" uid="uid://c3w8v402xpmhv" path="res://scenes/player/player.scn" id="2_y7fvr"]
+[ext_resource type="PackedScene" uid="uid://bbgogg5tor8e3" path="res://meshes/environment/world_plane_bottom.glb" id="4_ta23e"]
+[ext_resource type="PackedScene" uid="uid://d2lqfokxpkjdl" path="res://meshes/environment/world_plane_top.glb" id="5_orhci"]
 [ext_resource type="PackedScene" uid="uid://de4goy75y121s" path="res://meshes/environment/the_world_full_size.glb" id="5_ta23e"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dqffj"]
@@ -52,4 +54,12 @@ environment = SubResource("Environment_yrgf0")
 
 [node name="the_world_full_size" parent="." unique_id=258451677 instance=ExtResource("5_ta23e")]
 transform = Transform3D(99.99999, 0, 0, 0, -4.371139e-06, 99.99999, 0, -100, -4.3711384e-06, 0, -257, -50)
+rotation_order = 0
+
+[node name="world_plane_bottom" parent="the_world_full_size" unique_id=814255189 instance=ExtResource("4_ta23e")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
+rotation_order = 0
+
+[node name="world_plane_top" parent="the_world_full_size" unique_id=947477342 instance=ExtResource("5_orhci")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
 rotation_order = 0

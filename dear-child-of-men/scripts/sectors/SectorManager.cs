@@ -72,7 +72,7 @@ public partial class SectorManager : Node {
 
 
     public override void _PhysicsProcess(double delta) {
-        rotate_neighbouring_sectors();
+        //rotate_neighbouring_sectors();
 		rotate_world();
 		rotate_sun();
     }

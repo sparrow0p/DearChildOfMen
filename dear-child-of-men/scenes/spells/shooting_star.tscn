@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://bq8ta7vbb5vlh"]
+
+[ext_resource type="PackedScene" uid="uid://cynnbfjukwhtu" path="res://scenes/spells/base_spell.tscn" id="1_onvbp"]
+[ext_resource type="Script" uid="uid://cclte6gaid35m" path="res://scripts/spells/ShootingStar.cs" id="2_axsv8"]
+[ext_resource type="Script" uid="uid://bau0hfyxlbck3" path="res://scripts/spells/SpellArea.cs" id="3_c0pr8"]
+[ext_resource type="Texture2D" uid="uid://biyl6idey6fkn" path="res://icon.svg" id="4_kyshu"]
+
+[sub_resource type="Curve" id="Curve_kyshu"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.1), 0.0, 0.0, 0, 0]
+point_count = 2
+metadata/_snap_enabled = true
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_c0pr8"]
+radius = 0.15
+height = 0.8
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_wsiht"]
+radius = 1.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c0pr8"]
+metallic = 1.0
+emission_enabled = true
+emission = Color(0.58823305, 0.37200993, 0.8403545, 1)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_txo4y"]
+material = SubResource("StandardMaterial3D_c0pr8")
+radius = 0.2
+height = 0.7
+is_hemisphere = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kyshu"]
+albedo_texture = ExtResource("4_kyshu")
+emission_enabled = true
+emission = Color(1, 0.18403736, 0.21495605, 1)
+emission_energy_multiplier = 0.5
+uv1_offset = Vector3(0.5, 0, 0)
+
+[sub_resource type="SphereMesh" id="SphereMesh_c0pr8"]
+material = SubResource("StandardMaterial3D_kyshu")
+radius = 1.5
+height = 3.0
+
+[node name="ShootingStar" unique_id=2719094 node_paths=PackedStringArray("star_mesh", "explosion_mesh", "SpellAreaNode", "SpellAreaArray") instance=ExtResource("1_onvbp")]
+script = ExtResource("2_axsv8")
+distance = 8.0
+speed_curve = SubResource("Curve_kyshu")
+star_mesh = NodePath("StarMesh")
+explosion_mesh = NodePath("ExplosionMesh")
+PrimaryElement = 8
+SpellAreaNode = NodePath("SpellAreas")
+SpellAreaArray = [NodePath("SpellAreas/ProjectileArea"), NodePath("SpellAreas/ExplosionArea")]
+
+[node name="ProjectileArea" type="Area3D" parent="SpellAreas" parent_id_path=PackedInt32Array(374359994) index="0" unique_id=325019844]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+collision_layer = 32
+collision_mask = 22
+script = ExtResource("3_c0pr8")
+active_wait_time = 0.3
+metadata/_custom_type_script = "uid://bau0hfyxlbck3"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpellAreas/ProjectileArea" index="0" unique_id=1570671594]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_c0pr8")
+
+[node name="ExplosionArea" type="Area3D" parent="SpellAreas" parent_id_path=PackedInt32Array(374359994) index="1" unique_id=124434980]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+collision_layer = 32
+collision_mask = 22
+monitoring = false
+monitorable = false
+script = ExtResource("3_c0pr8")
+Active = false
+active_wait_time = 0.1
+metadata/_custom_type_script = "uid://bau0hfyxlbck3"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpellAreas/ExplosionArea" index="0" unique_id=326795568]
+shape = SubResource("CylinderShape3D_wsiht")
+
+[node name="StarMesh" type="MeshInstance3D" parent="." index="1" unique_id=735576734]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -0.3, 1, 0)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_txo4y")
+
+[node name="ExplosionMesh" type="MeshInstance3D" parent="." index="2" unique_id=131809404]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
+cast_shadow = 0
+mesh = SubResource("SphereMesh_c0pr8")

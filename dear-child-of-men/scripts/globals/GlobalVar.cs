@@ -3,7 +3,7 @@ using System;
 using System.Reflection.Metadata.Ecma335;
 
 
-public partial class GlobalVar : Node {
+public partial class GlobalVar {
     public static CharacterBody3D Player {get; set;}
     public static DirectionalLight3D TheSun {get; set;}
     public static Node3D TheWorld {get; set;}

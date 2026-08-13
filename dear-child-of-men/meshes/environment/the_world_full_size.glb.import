@@ -40,18 +40,10 @@ materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
 _subresources={
-"materials": {
-"Material": {
-"use_external/enabled": false,
-"use_external/fallback_path": "res://resources/environment/world_palette_material.tres",
-"use_external/path": "uid://fc3ixg3bq1fu"
-}
-},
 "nodes": {
-"PATH:Cylinder2": {
+"PATH:Cylinder3": {
 "generate/physics": true,
-"physics/layer": 256,
-"physics/mask": 0
+"physics/layer": 256
 }
 }
 }

@@ -1,4 +1,4 @@
- using Godot;
+using Godot;
 using System;
 
 public partial class Player : CharacterBody3D {
@@ -15,6 +15,7 @@ public partial class Player : CharacterBody3D {
 	[Export] private Node3D fp_camera_pivot;
 	private const float scroll_speed = 1.0f;
 	private const float mouse_sensitivity = 0.012f;
+	[Export] private SpellBook spell_book;
 
 
     public override void _Ready() {
@@ -51,6 +52,14 @@ public partial class Player : CharacterBody3D {
 				tp_camera_pivot.Rotation = new(Mathf.Clamp(tp_camera_pivot.Rotation.X, -Mathf.DegToRad(90), Mathf.DegToRad(90)), tp_camera_pivot.Rotation.Y, 0);
 			}
 		}
+
+		if (@event.IsActionPressed("1")) {
+			ShootingStar spell = spell_book.AllSpells[0].Instantiate<ShootingStar>();
+			spell.Direction = new(direction.X, 0, direction.Y);
+			GetTree().Root.AddChild(spell);
+			spell.GlobalPosition = GlobalPosition;
+			spell.GlobalRotation = Vector3.Up * -direction.Angle();
+		}
     }
 
 
@@ -67,7 +76,6 @@ public partial class Player : CharacterBody3D {
 		} else if (Input.MouseMode == Input.MouseModeEnum.Visible) {
 			direction = direction.Rotated(-tp_camera_pivot.Rotation.Y);
 		}
-
 
 		
 		Vector2 velocity_xz = new(Velocity.X, Velocity.Z);
