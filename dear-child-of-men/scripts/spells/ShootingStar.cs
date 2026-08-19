@@ -7,7 +7,6 @@ public partial class ShootingStar : BaseSpell {
     [Export] private Curve speed_curve = new();
     [Export] MeshInstance3D star_mesh;
     [Export] MeshInstance3D explosion_mesh;
-    public Vector3 Direction {get; set;} = new();
     private float speed_mult;
     private Timer fly_timer;
 
@@ -23,7 +22,7 @@ public partial class ShootingStar : BaseSpell {
     public override void _PhysicsProcess(double delta) {
         if (SpellAreaArray[0].Active) {
             float v = speed_curve.Sample((float)Math.Clamp(1 - fly_timer.TimeLeft / fly_timer.WaitTime, 0, 1));
-            GlobalPosition += Direction * speed_mult  * v * (float)delta;
+            GlobalPosition += new Vector3(Direction.X, 0, Direction.Y) * speed_mult  * v * (float)delta;
         }
     }
 

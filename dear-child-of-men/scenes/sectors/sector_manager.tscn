@@ -28,9 +28,9 @@ glow_enabled = true
 fog_light_color = Color(0, 0, 0, 1)
 fog_density = 0.001
 
-[node name="SectorManager" type="Node" unique_id=930598453 node_paths=PackedStringArray("player", "the_sun", "environment", "the_world", "world_ray_cast")]
+[node name="SectorManager" type="Node" unique_id=930598453 node_paths=PackedStringArray("Player", "the_sun", "environment", "the_world", "world_ray_cast")]
 script = ExtResource("1_iurmr")
-player = NodePath("Player")
+Player = NodePath("Player")
 the_sun = NodePath("TheSun")
 environment = NodePath("Environment")
 the_world = NodePath("the_world_full_size")

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b6bxrx1fhdkqp"]
+
+[ext_resource type="Script" uid="uid://blv6najehevoa" path="res://scripts/enemies/BaseEnemy.cs" id="1_r5xb8"]
+[ext_resource type="Script" uid="uid://dlvjscjukhcy1" path="res://scripts/components/HealthComponent.cs" id="2_qf3h2"]
+
+[sub_resource type="Resource" id="Resource_o4mit"]
+script = ExtResource("2_qf3h2")
+metadata/_custom_type_script = "uid://dlvjscjukhcy1"
+
+[node name="BaseEnemy" type="CharacterBody3D" unique_id=162780080]
+script = ExtResource("1_r5xb8")
+HealthCom = SubResource("Resource_o4mit")
+metadata/_custom_type_script = "uid://blv6najehevoa"

@@ -48,7 +48,10 @@ public partial class SectorManager : Node {
 	private readonly string[] preload_path_array = new string[8];
 	private readonly Vector3[] preload_position_array = new Vector3[8];
 	private readonly HashSet<string> is_sector_loading_set = new();
-	[Export] private CharacterBody3D player;
+	[Export] private PlayerBody3D Player {
+		get => GlobalVar.Player;
+		set => GlobalVar.Player = value;
+	}
 	[Export] private DirectionalLight3D the_sun;
 	[Export] private WorldEnvironment environment;
 	[Export] private Node3D the_world;
@@ -60,7 +63,7 @@ public partial class SectorManager : Node {
 		GlobalVar.TheWorld = the_world;
 		GlobalVar.SectorManager = this;
 		Tree = GetTree();
-		player = GlobalVar.Player;
+		Combat.Ready();
 
 		load_sector_at(new(16, 8));
     }
@@ -304,7 +307,7 @@ public partial class SectorManager : Node {
 
 
 	private void rotate_neighbouring_sectors() {
-		if (player == null || current_sector == null)
+		if (Player == null || current_sector == null)
 			return;
 
 		Vector3 cs_gp = current_sector.GlobalPosition;
@@ -315,7 +318,7 @@ public partial class SectorManager : Node {
 			BaseSector sector = preloaded_sector_array[i];
 			if (sector != null) {
 				Vector3 axis = new(0, 0, 1);
-				float angle = (player.GlobalPosition.X - left_pivot) / sector_diameter * Mathf.Pi / 8;
+				float angle = (Player.GlobalPosition.X - left_pivot) / sector_diameter * Mathf.Pi / 8;
 				Vector3 offset = new(-sector_diameter/2, 0, 0);
 
 				offset = offset.Rotated(axis, angle);
@@ -328,7 +331,7 @@ public partial class SectorManager : Node {
 			BaseSector sector = preloaded_sector_array[i];
 			if (sector != null) {
 				Vector3 axis = new(0, 0, 1);
-				float angle = (player.GlobalPosition.X - right_pivot) / sector_diameter * Mathf.Pi / 8;
+				float angle = (Player.GlobalPosition.X - right_pivot) / sector_diameter * Mathf.Pi / 8;
 				Vector3 offset = new(sector_diameter/2, 0, 0);
 
 				offset = offset.Rotated(axis, angle);
@@ -344,10 +347,10 @@ public partial class SectorManager : Node {
 		float delta_height = 0;
 
 		if (world_ray_cast.IsColliding())
-            delta_height = player.GlobalPosition.Y - world_ray_cast.GetCollisionPoint().Y - 5;
+            delta_height = Player.GlobalPosition.Y - world_ray_cast.GetCollisionPoint().Y - 5;
 
-		the_world.GlobalPosition = new(player.GlobalPosition.X, the_world.GlobalPosition.Y + delta_height, the_world.GlobalPosition.Z);
-		the_world.Rotation = new(-Mathf.Pi/2 + Mathf.Pow(player.GlobalPosition.Z / 1600, 3) * Mathf.Pi / 4, -(player.GlobalPosition.X + 50) * 2 * Mathf.Pi / 1600, 0);
+		the_world.GlobalPosition = new(Player.GlobalPosition.X, the_world.GlobalPosition.Y + delta_height, the_world.GlobalPosition.Z);
+		the_world.Rotation = new(-Mathf.Pi/2 + Mathf.Pow(Player.GlobalPosition.Z / 1600, 3) * Mathf.Pi / 4, -(Player.GlobalPosition.X + 50) * 2 * Mathf.Pi / 1600, 0);
 	}
 	
 

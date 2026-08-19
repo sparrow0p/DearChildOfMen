@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="HealthComponent" format=3 uid="uid://jwiwsdd4thg7"]
+
+[ext_resource type="Script" uid="uid://dlvjscjukhcy1" path="res://scripts/components/HealthComponent.cs" id="1_d2j4i"]
+
+[resource]
+script = ExtResource("1_d2j4i")
+MultIncElementalDmg = Dictionary[int, float]({
+4: 30.0,
+8: 60.0
+})
+metadata/_custom_type_script = "uid://dlvjscjukhcy1"
