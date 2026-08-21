@@ -1,0 +1,14 @@
+[gd_resource type="BehaviorTree" format=3 uid="uid://btei42sng5krp"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_3p8pl"]
+var/var/name = &"var"
+var/var/type = 3
+var/var/value = 0.0
+var/var/hint = 0
+var/var/hint_string = ""
+
+[sub_resource type="BTSelector" id="BTSelector_7nvc4"]
+
+[resource]
+blackboard_plan = SubResource("BlackboardPlan_3p8pl")
+root_task = SubResource("BTSelector_7nvc4")

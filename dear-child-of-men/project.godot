@@ -102,6 +102,11 @@ shift={
 3d_physics/layer_7="Enemy Spell"
 3d_physics/layer_9="The World Full Size"
 
+[limbo_ai]
+
+behavior_tree/behavior_tree_default_dir="res://resources/ai/trees"
+behavior_tree/user_task_dirs=PackedStringArray("res://resources/ai/tasks")
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
