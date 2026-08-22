@@ -2,8 +2,6 @@
 
 [ext_resource type="Script" uid="uid://bodxuf80mnrg7" path="res://scripts/sectors/BaseSector.cs" id="1_uu03e"]
 
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_i88rf"]
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g5htk"]
 albedo_color = Color(0.29411766, 0.4117647, 0.18431373, 1)
 
@@ -120,16 +118,17 @@ item/7/navigation_layers = 1
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_txo4y"]
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_i88rf"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_3p8pl"]
+size = Vector2(100, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i88rf"]
+size = Vector3(100, 2, 100)
+
 [node name="BaseSector" type="Node3D" unique_id=1886618992 node_paths=PackedStringArray("EnemiesNode")]
 script = ExtResource("1_uu03e")
 EnemiesNode = NodePath("Enemies")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1747500829]
-collision_layer = 8
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=703348231]
-shape = SubResource("WorldBoundaryShape3D_i88rf")
 
 [node name="GridMap" type="GridMap" parent="." unique_id=895413849]
 mesh_library = SubResource("MeshLibrary_i88rf")
@@ -142,3 +141,19 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="Enemies" type="Node3D" parent="." unique_id=566239881]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=2029465606]
+navigation_mesh = SubResource("NavigationMesh_i88rf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D" unique_id=27461689]
+process_mode = 4
+visible = false
+mesh = SubResource("PlaneMesh_3p8pl")
+
+[node name="FloorCollisions" type="StaticBody3D" parent="." unique_id=453426339]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FloorCollisions" unique_id=1444746474]
+shape = SubResource("BoxShape3D_i88rf")

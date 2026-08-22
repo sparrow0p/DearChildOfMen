@@ -46,22 +46,22 @@ public partial class BaseSpell : Node3D {
     }
 
 
-    public void AreaEnteredSpell(Area3D spell_area, Area3D area) {
+    public virtual void AreaEnteredSpell(Area3D spell_area, Area3D area) {
         
     }
 
 
-    public void AreaExitedSpell(Area3D spell_area, Area3D area) {
+    public virtual void AreaExitedSpell(Area3D spell_area, Area3D area) {
         
     }
 
 
-    public void BodyEnteredSpell(Area3D spell_area, Node3D body) {
+    public virtual void BodyEnteredSpell(Area3D spell_area, Node3D body) {
         
     }
 
 
-    public void BodyExitedSpell(Area3D spell_area, Node3D body) {
+    public virtual void BodyExitedSpell(Area3D spell_area, Node3D body) {
         
     }
 
