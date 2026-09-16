@@ -32,6 +32,7 @@ movie_writer/movie_file="C:/Users/Pawel/Desktop/DearChildOfMen/dear-child-of-men
 
 folder_colors={
 "res://addons/": "red",
+"res://graphics/": "orange",
 "res://meshes/": "yellow",
 "res://resources/": "green",
 "res://scenes/": "blue",

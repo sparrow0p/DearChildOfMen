@@ -2,16 +2,11 @@
 
 [ext_resource type="Script" uid="uid://blv6najehevoa" path="res://scripts/enemies/BaseEnemy.cs" id="1_r5xb8"]
 
-[sub_resource type="BlackboardPlan" id="BlackboardPlan_qf3h2"]
-
 [node name="BaseEnemy" type="CharacterBody3D" unique_id=162780080 node_paths=PackedStringArray("NavigationAgent", "IdealPositionRayCast")]
 script = ExtResource("1_r5xb8")
 NavigationAgent = NodePath("NavigationAgent3D")
 IdealPositionRayCast = NodePath("IdealPositionRayCast")
 metadata/_custom_type_script = "uid://blv6najehevoa"
-
-[node name="BTPlayer" type="BTPlayer" parent="." unique_id=18808624]
-blackboard_plan = SubResource("BlackboardPlan_qf3h2")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1420716216]
 

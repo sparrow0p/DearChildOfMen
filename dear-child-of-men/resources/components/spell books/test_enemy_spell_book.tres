@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SpellBook" format=3 uid="uid://cwv6j1qbl4ylm"]
+[gd_resource type="Resource" format=3 uid="uid://cwv6j1qbl4ylm"]
 
 [ext_resource type="Script" uid="uid://brnmli3x40vjj" path="res://scripts/components/AvailableSpell.cs" id="1_j5567"]
 [ext_resource type="Script" uid="uid://30qoybwsstb6" path="res://scripts/components/SpellBook.cs" id="2_3b0io"]
