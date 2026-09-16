@@ -18,7 +18,9 @@ public partial class BaseEnemy : CharacterBody3D {
     #region Other Variables
     private static PlayerBody3D Player {
 		get => GlobalVar.Player;
-		set => GlobalVar.Player = value;
+	}
+    private static Vector3 PlayerPosition {
+		get => GlobalVar.Player.GlobalPosition;
 	}
     #endregion
 
@@ -37,6 +39,10 @@ public partial class BaseEnemy : CharacterBody3D {
 
 
     public override void _PhysicsProcess(double delta) {
+        if (!IsOnFloor()) {
+            Velocity += Vector3.Up * GetGravity() * (float)delta;
+        }
+
         NavigationActorMove();
 
         MoveAndSlide();
@@ -65,18 +71,18 @@ public partial class BaseEnemy : CharacterBody3D {
 
     private void NavigationActorMove() {
         if (NavigationAgent.IsNavigationFinished()) {
-            Velocity = Vector3.Zero;
+            Velocity = new Vector3(0, 1, 0) * Velocity;
             return;
         }
 
         Vector3 currentAgentPosition = GlobalTransform.Origin;
         Vector3 nextPathPosition = NavigationAgent.GetNextPathPosition();
 
-        Velocity = currentAgentPosition.DirectionTo(nextPathPosition) * 10.0f;
+        Velocity = new Vector3(1, 0, 1) * currentAgentPosition.DirectionTo(nextPathPosition) * 10.0f;
     }
 
 
-    private Vector3? FindIdealRangedPosition(Vector3 target_position, float ideal_distance, float min_distance = 0.0f, int ray_casts_number = 16, float parent_target_distance_ratio = 0.5f) {
+    private Vector3? FindIdealRangedPosition(Vector3 target_position, float ideal_distance, float min_distance = 0.0f, int ray_casts_number = 16, float parent_target_distance_ratio = 0.2f) {
         Vector3 IdealPosition = Vector3.Zero;
         float min_measure = float.PositiveInfinity;
 

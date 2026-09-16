@@ -3,9 +3,9 @@ using System;
 
 
 [Tool]
-public partial class FolloTargetAtDistance : BTAction {
+public partial class FollowTargetAtDistance : BTAction {
     public override string _GenerateName() {
-        return "FolloTargetAtDistance";
+        return "FollowTargetAtDistance";
     }
 
 

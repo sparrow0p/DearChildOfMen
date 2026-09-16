@@ -16,6 +16,7 @@ bottom_radius = 0.7
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_3p8pl"]
 
 [node name="TestEnemy" unique_id=162780080 instance=ExtResource("1_pnhpx")]
+collision_mask = 24
 script = ExtResource("2_o4mit")
 SpellBook = ExtResource("3_tf3a8")
 HealthCom = ExtResource("2_kmxma")
